@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanket's To-Do List</title>
+    <style>
+        *{
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(212, 241, 252);
+            
+        }
+        .hide{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+        h1{
+            color: rgb(5, 94, 89);
+        }
+        #textarea{
+            border: 5px solid black;
+            text-align: left;
+             font-size: 17px;
+             background-color: white;
+             border-radius: 10px;
+        }
+        #time{
+            border: 3px solid black;
+            background-color: white;
+           
+        }
+        #date{
+            border: 3px solid black;
+            background-color: white;
+        }
+        #type{
+            height: 40px;
+            width: 100px;
+            border: 3px solid black;
+            border-radius: 10px ;
+            background-color: rgb(199, 142, 211);
+            color: white;
+        }
+        #type:hover{
+            cursor:pointer;
+           background-color: rgb(163, 85, 163);
+        }
+        #progress{
+            text-align: left;
+            padding-right: 0px;
+            border: 2px solid rgb(1, 33, 102);
+            color: lightblue;
+            background: rgb(255, 0, 0);
+        }
+        progress {
+  border: none;
+  width: 200px;
+  height: 20px;
+  background: crimson;
+}
+
+
+
+.progress::-webkit-progress-value {
+  background: red;
+}
+.progress1::-webkit-progress-value {
+  background: green;
+}
+.close {
+            width: 20px;
+           text-align:right;
+  position:absolute;
+  right: 0;
+  top: 180;
+  padding: 0px 30px 0px 16px;
+  background-color: white;
+ 
+}
+.close:hover {
+    transition: width 1s ease-in-out;
+  background-color: #f44336;
+  color: white;
+  
+}
+#div{
+           color: white;
+           position: absolute;
+           background-color: #f1f1f1;
+           min-width: 160px;
+           overflow: auto;
+           box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+           z-index: 1;
+           
+           
+                 }
+         #main{
+             padding-left: 20px;
+         }
+
+        #span1{
+            text-align: left;
+            padding-right: 1020px;
+        }
+    #space{
+        text-align: left;
+        padding-right: 720px;
+        font-size: 20px;
+    }
+    .para{
+        width: 1205px;
+        border: 2px solid black;
+        text-align: left;
+        padding-left: 20px;
+        background-color: rgb(228, 228, 228);
+    }
+    .para:hover{
+        border: 3px solid rgb(6, 110, 207);
+        transition: 0.5s;
+        background-color: greenyellow;
+      line-height-step: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    #button{
+        padding-right: 1220px;
+        padding-left: 80px;
+        
+    }
+    button{
+     border: 3px solid rgb(5, 55, 68);
+     background-color: rgb(212, 148, 148);
+     color: white;
+    }
+    .mylist{
+        text-align: left;
+        background-color: white;
+        padding-left: 20px;
+        color: black;
+    }
+    #li1:hover{
+        cursor: pointer;
+      background-color: rgb(180, 178, 178);
+    }
+    #li2:hover{
+        cursor: pointer;
+      background-color: rgb(180, 178, 178);
+    }
+    #li3:hover{
+        cursor: pointer;
+      background-color: rgb(180, 178, 178);
+    }
+    #drop{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    #drop:hover{
+        cursor: pointer;
+        background-color:rgb(156, 85, 85);
+    }
+   h1 {
+  transition: transform 1s ease-in-out;
+}
+h1:hover {
+  transform: rotateY(180deg);
+  
+  color: rgb(61, 6, 57);
+  cursor: pointer;
+ 
+}
+    </style>
+</head>
+<body>
+     <h1 onclick="happy()">Sanket's To-Do list!</h1> <span id="button"><button id="drop" onclick="func()" type="button">Info?</button></span>
+     <br>
+     <div id="main"> <div class="hide" id="div">
+  
+        <li id="li1" class="mylist">how to use?</li>
+        <li id="li2"class="mylist">why to use?</li>
+        <li id="li3"class="mylist"><a href=" https://nayakthecoder.github.io/feedback/.">Feedback</a></li>
+   
+</div></div>
+     <div>
+         <div><input id="date" type="date"> <input id="time" type="time">
+            <br>
+            <br>
+         <div>
+             <textarea name="" placeholder = "    Enter the item in here pls" id="textarea" cols="40" rows="5"></textarea>
+             <br>
+             <button type="button" id="type" onclick="myfunction()">Add Item</button>
+         </div>
+         <span style="text-align: left;padding-right:1020px;font-size: 20px;"> work to do:
+
+        </span><span id="span1"><progress class="progress" value="0" max="30"></progress></span>
+     </div>
+     <ul id="space"></ul>
+     <script>
+        let date = document.getElementById("date");
+        let time = document.getElementById("time");
+        let text = document.getElementById("textarea");
+        let space = document.getElementById("space");
+        let div = document.getElementById("div");
+    
+        li1.addEventListener("click",function(){alert("how to use ? use the text area for writng the note and the fill in the date and time field and then click on the add button . if you want to cross out a note click on the nota and if you want to remove it then click on the cross.");});
+        li2.addEventListener("click",function(){alert("Why to use? use this event taker to keep a track of your events and also to take important notes.");});
+       
+    
+        function myfunction(){
+            if(!text.value||!time.value||!date.value){
+                alert("Pls enter some input");
+            }
+            else{
+                let progress = document.querySelector("progress");
+                progress.value++;
+            let br = document.createElement("br");
+            let span =  document.createElement("span");
+            let li = document.createElement("li");
+            li.className = "para";
+            span.className = "close";
+            span.innerHTML = "X";
+            li.innerHTML =  date.value+" : "+time.value+"-"+" "+text.value;
+           space.appendChild(li);
+        space.appendChild(br);
+            li.appendChild(span );
+            li.addEventListener("click",function(){
+                li.style.textDecoration = "line-through";
+            })
+            span.addEventListener("click",function(){
+                li.style.transition =  "transform 1s ease-in-out";
+                 
+               space.removeChild(li);
+                space.removeChild(br);
+    
+                progress.value--;
+            });
+    
+            text.value = "";
+            date.value = "";
+            time.value = " ";
+        }
+        }
+        function func(){
+          div.classList.toggle("show");  
+        }
+        window.onclick = function(event) {
+      if (!event.target.matches('#drop')) {
+        var dropdowns = document.getElementsByClassName("hide");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    } 
+  function  happy(){
+      alert("Happy Birthday Sanku ! :} :} :}");
+  } 
+    </script>
+</body>
+</html>
